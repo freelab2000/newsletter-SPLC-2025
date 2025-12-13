@@ -1,0 +1,839 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Newsletter SPLC — v4.39</title>
+  <meta name="description" content="Boletín SPLC fin de año — Edición especial con convenios y reconocimientos." />
+  <style>
+    :root {
+      --bg: #F7F9FC;
+      --panel: #FFFFFF;
+      --ink: #0B0F19;
+      --muted: #4B5563;
+      --blue: #0072CE;
+      --red: #D7141A;
+      --border: #E6ECF5;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* HERO */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      color: #fff;
+      background: linear-gradient(90deg, var(--blue), var(--red));
+    }
+
+    .hero-inner {
+      padding: 56px 0 44px;
+      text-align: center;
+    }
+
+    .hero-logo {
+      width: 180px;
+      height: auto;
+      margin: 0 auto 12px;
+      border-radius: 16px;
+      background: #fff;
+      color: #E11D48;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 32px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, .25);
+    }
+
+    .hero-logo span {
+      display: block;
+      line-height: 1.1;
+    }
+
+    .hero-sub {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: .16em;
+      opacity: .9;
+      margin-bottom: 6px;
+    }
+
+    .title {
+      font-size: 32px;
+      font-weight: 800;
+      letter-spacing: .2px;
+      margin: 10px 0 6px;
+    }
+
+    .subtitle {
+      opacity: .95;
+      font-weight: 500;
+      margin: 0;
+    }
+
+    .hero-accent {
+      height: 4px;
+      width: 160px;
+      margin: 18px auto 0;
+      border-radius: 2px;
+      background: linear-gradient(90deg, rgba(255, 255, 255, .95), rgba(255, 255, 255, .65));
+    }
+
+    .hero-split {
+      height: 6px;
+      background: linear-gradient(90deg, var(--red), var(--blue));
+    }
+
+    /* SECCIONES */
+    .section {
+      padding: 28px 0;
+    }
+
+    .kicker {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .16em;
+      color: var(--blue);
+      margin-bottom: 6px;
+    }
+
+    .section h2 {
+      font-size: 26px;
+      margin: 0 0 12px;
+      position: relative;
+    }
+
+    .section h2::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      width: 64px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--red), var(--blue));
+      border-radius: 2px;
+    }
+
+    .section-image {
+      margin: 0 0 14px 0;
+    }
+
+    .section-image img {
+      width: 100%;
+      max-height: 240px;
+      object-fit: cover;
+      border-radius: 14px;
+      box-shadow: 0 10px 22px rgba(0, 0, 0, .06);
+      filter: brightness(.96);
+    }
+
+    .card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 18px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, .06);
+    }
+
+    .card.letter {
+      border-left: 5px solid var(--blue);
+    }
+
+    .muted {
+      color: #475569;
+    }
+
+    .list {
+      margin: 0;
+      padding-left: 18px;
+      color: #374151;
+    }
+
+    .list li {
+      margin: 6px 0;
+      background: #f8fafc;
+      border-radius: 10px;
+      padding: 8px 10px;
+    }
+
+    .list li:nth-child(even) {
+      background: #fff5f5;
+    }
+
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 24px 0 8px;
+    }
+
+    .divider::before,
+    .divider::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .divider span {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .16em;
+      color: #64748b;
+    }
+
+    .btn-panel,
+    .readmore {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      float: right;
+      background: var(--blue);
+      color: #fff !important;
+      border: none;
+      border-radius: 10px;
+      padding: 10px 16px;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, .08);
+      transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .btn-panel:hover,
+    .readmore:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, .12);
+      background: #005aa7;
+    }
+
+    .icon-arrow {
+      width: 16px;
+      height: 16px;
+    }
+
+    footer.footer {
+      color: #fff;
+      background: var(--red);
+      margin-top: 20px;
+    }
+
+    footer .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 16px 0;
+      font-size: 13px;
+    }
+
+    /* PANEL LATERAL */
+    .overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, .5);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .3s ease;
+      z-index: 50;
+    }
+
+    .overlay.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .sidepanel {
+      position: fixed;
+      top: 0;
+      right: 0;
+      height: 100vh;
+      width: 40vw;
+      max-width: 760px;
+      min-width: 340px;
+      background: #fff;
+      box-shadow: -18px 0 38px rgba(0, 0, 0, .25);
+      transform: translateX(100%);
+      transition: transform .3s ease;
+      z-index: 60;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .sidepanel.show {
+      transform: translateX(0);
+    }
+
+    .sidepanel header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 18px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .sidepanel header h3 {
+      margin: 0;
+      font-size: 18px;
+    }
+
+    .closebtn {
+      background: none;
+      border: none;
+      font-size: 20px;
+      color: #e11d48;
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    .panel-body {
+      padding: 16px 18px 20px;
+      overflow-y: auto;
+    }
+
+    .benef-card {
+      margin-bottom: 12px;
+      border-radius: 12px;
+    }
+
+    .benef-img {
+      width: 100%;
+      height: auto;
+      max-height: 150px;
+      object-fit: contain;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      margin-bottom: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, .04);
+    }
+
+    .despedida-gallery {
+      margin-top: 16px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+
+    .despedida-gallery img {
+      width: 100%;
+      border-radius: 12px;
+      object-fit: cover;
+      max-height: 260px;
+    }
+
+    .cierre-gallery {
+      margin-top: 16px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+
+    .cierre-gallery img {
+      width: 100%;
+      border-radius: 12px;
+      object-fit: cover;
+      max-height: 260px;
+    }
+
+    @media (max-width: 900px) {
+      .sidepanel {
+        width: 100vw;
+      }
+    }
+  
+    .beneficios-carousel {
+      margin-top: 20px;
+      padding: 12px 4px 4px;
+      border-radius: 16px;
+      background: #f5f7fb;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .beneficios-track {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .beneficios-track img {
+      height: 72px;
+      flex: 0 0 auto;
+      border-radius: 12px;
+      background: #ffffff;
+      padding: 8px 12px;
+      box-shadow: 0 2px 6px rgba(15, 23, 42, 0.12);
+    }
+
+    @media (max-width: 600px) {
+      .beneficios-track img {
+        height: 60px;
+        padding: 6px 10px;
+      }
+    }
+
+/* Ajuste para imagen de Carta de la Directiva */
+#carta .section-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+/* Ajuste específico Carta de la Directiva: anclar imagen abajo */
+#carta .section-image img {
+  object-position: center bottom;
+}
+
+
+/* Imagen superior panel lateral */
+.panel-hero {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 14px;
+}
+
+
+.panel-hero.pista {
+  height: 160px;
+  object-fit: cover;
+  object-position: center 60%;
+}
+
+.panel-hero.despedida {
+  height: 140px;
+  object-fit: cover;
+  object-position: center 70%;
+}
+
+.panel-hero.celebracion {
+  height: 160px;
+  object-fit: cover;
+  /* Prioriza el fuselaje y el cockpit, sin cortar fuegos */
+  object-position: center 55%;
+}
+</style>
+
+
+</head>
+<body>
+
+<header class="hero">
+  <div class="container hero-inner">
+    <div class="hero-logo">
+      <span>SPLC</span>
+    </div>
+    <div class="hero-sub">Boletín especial</div>
+    <div class="title">SPLC | 2025: Volando juntos</div>
+    <p class="subtitle">Edición especial de fin de año — Directiva SPLC</p>
+    <div class="hero-accent"></div>
+  </div>
+  <div class="hero-split"></div>
+</header>
+
+<main class="container">
+
+  <!-- CARTA DIRECTIVA -->
+  <section class="section" id="carta">
+    <div class="kicker">Mensaje institucional</div>
+    <h2>Carta de la Directiva</h2>
+    <div class="section-image">
+      <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1600&auto=format&fit=crop"
+           alt="Reunión de equipo directivo" />
+    </div>
+    <div class="card letter">
+      <p>
+        Durante 2025 enfrentamos desafíos importantes y logramos avances concretos gracias a la participación
+        y compromiso de nuestros asociados. Esta edición resume los hitos más relevantes del año, los beneficios
+        conseguidos y los desafíos que se vienen por delante.
+      </p>
+      <a class="readmore" id="openLetter" href="#">
+        Ver carta completa
+        <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+        </svg>
+      </a>
+      <div style="clear:both;"></div>
+    </div>
+  </section>
+
+  <!-- BENEFICIOS / CONVENIOS -->
+  <div class="divider"><span>Nuevos beneficios</span></div>
+  <section class="section" id="beneficios">
+    <div class="kicker">Para nuestros asociados</div>
+    <h2>Beneficios logrados durante 2025</h2>
+    <div class="section-image">
+      <img src="beneficios-ideas.jpg"
+           alt="Acuerdo y beneficios" />
+    </div>
+    <div class="card letter" style="margin-top: 8px;">
+      <p class="muted">
+        Durante el año se consolidaron y ampliaron convenios preferentes en transporte, hotelería, bienestar y
+        formación, pensados para acompañar la vida laboral y personal de nuestros pilotos.
+      </p>
+      <a id="btn-convenios" class="btn-panel" href="#">
+        Ver más
+        <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+        </svg>
+      </a>
+      <div style="clear:both;"></div>
+    </div>
+  </section>
+
+  <!-- NUESTRA GENTE: DESPEDIDAS -->
+  <div class="divider"><span>Nuestra gente</span></div>
+  <section class="section" id="gente">
+    <h2>Reconocimientos y despedidas</h2>
+    <div class="section-image">
+      <img src="portada-despedida.jpg"
+           alt="Cena de despedida de nuestros pilotos" />
+    </div>
+    <div class="card">
+      <p>
+        Este mes despedimos a dos grandes colegas que cerraron su carrera al cumplir 65 años.
+        En una cena de homenaje compartimos recuerdos, anécdotas y palabras de agradecimiento entre compañeros.
+      </p>
+      <a id="btn-gente" class="btn-panel" href="#">
+        Ver más
+        <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+        </svg>
+      </a>
+      <div style="clear:both;"></div>
+    </div>
+  </section>
+
+  <!-- LOGROS 2025 -->
+  <div class="divider"><span>Logros 2025</span></div>
+  <section class="section" id="logros">
+    <div class="kicker">Resultados destacados</div>
+    <h2>Lo que hemos conseguido juntos</h2>
+    <div class="section-image">
+      <img src="https://images.unsplash.com/photo-1529070538774-1843cb3265df?q=80&w=1600&auto=format&fit=crop"
+           alt="Equipo celebrando" />
+    </div>
+    <div class="card">
+      <p>
+        Durante 2025 avanzamos en logros y consolidaciones relevantes como sindicato, fortaleciendo nuestra capacidad de gestión, comunicación y representación.
+      </p>
+      <p>
+        Este año permitió afianzar herramientas, espacios de encuentro y procesos internos que hoy nos permiten enfrentar los desafíos del presente y proyectar el trabajo futuro con mayor cohesión y participación de nuestros asociados.
+      </p>
+      <a id="btn-logros" class="btn-panel" href="#">
+        Ver más
+        <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+        </svg>
+      </a>
+      <div style="clear:both;"></div>
+    </div>
+  </section>
+
+  <!-- AVANCES CONVENIO -->
+  <div class="divider"><span>Avances y desafíos</span></div>
+  <section class="section" id="convenio">
+    <div class="kicker">Convenio</div>
+    <h2>Avances y próximos desafíos</h2>
+    <div class="section-image">
+      <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=1600&auto=format&fit=crop"
+           alt="Planificación" />
+    </div>
+    <div class="card">
+      
+      <p class="muted">Durante este año avanzamos en la preparación de nuestra próxima negociación colectiva, con instancias de capacitación, asesoría permanente y conversatorios que han permitido recoger inquietudes y construir propuestas claras en beneficio de todos los pilotos.</p>
+      <a id="btn-avances" class="btn-panel" href="#">
+        Ver más
+        <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+        </svg>
+      </a>
+      <div style="clear:both;"></div>
+    </div>
+  </section>
+
+  <!-- CIERRE DEL AÑO -->
+  <div class="divider"><span>Cierre del año</span></div>
+  <section class="section" id="cierre">
+    <div class="kicker">Encuentro anual</div>
+    <h2>Cerrando el año en grande</h2>
+    <div class="section-image">
+      <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=1600&auto=format&fit=crop"
+           alt="Cena fin de año" />
+    </div>
+    <div class="card">
+      <p>En el pasado 3 de diciembre realizamos nuestro encuentro anual, una jornada de alta participación y gran espíritu de camaradería. Fue un espacio distendido para compartir, agradecer el apoyo de nuestros pilotos y seguir fortaleciendo nuestra comunidad.</p>
+      <div style="display:flex; justify-content:flex-end; margin-top:6px;">
+        <a id="btn-cierre" class="btn-panel" href="#">
+          Ver más
+          <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <p style="margin:0;font-weight:600;">
+      SPLC — Sindicato de Pilotos LAN Cargo · Edición especial de fin de año 2025
+    </p>
+    <div class="stamp"></div>
+  </div>
+</footer>
+
+<!-- OVERLAY Y PANEL LATERAL -->
+<div class="overlay" id="overlay"></div>
+<aside class="sidepanel" id="sidepanel" aria-hidden="true">
+  <header>
+    <h3 id="panelTitle">Detalle</h3>
+    <button class="closebtn" id="closePanel" aria-label="Cerrar">✕</button>
+  </header>
+  <div class="panel-body" id="panelBody"></div>
+</aside>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const CONVENIOS_VIGENTES_2025 = [
+      {
+        t: "Enterprise Rent-a-Car",
+        d: "Tarifas corporativas y condiciones preferentes para arriendo de vehículos."
+      },
+      {
+        t: "Hotel DoubleTree by Hilton — Vitacura",
+        d: "Tarifa corporativa en Santiago, pensada para el descanso seguro y confortable de las tripulaciones."
+      },
+      {
+        t: "Hotel Hyatt Place — Vitacura",
+        d: "Tarifas especiales orientadas al descanso de tripulaciones y estancias de conexión."
+      },
+      {
+        t: "Gimnasio Inprove",
+        d: "Tarifas preferenciales y descuentos exclusivos para pilotos SPLC."
+      },
+      {
+        t: "App Going Around",
+        d: "Valor preferencial para entrenamiento de inglés aeronáutico y fraseología."
+      },
+      {
+        t: "Emprendimientos SPLC",
+        d: "Espacio de difusión dentro de la App SPLC para los proyectos de nuestros asociados."
+      }
+    ];
+
+    const overlay   = document.getElementById('overlay');
+    const panel     = document.getElementById('sidepanel');
+    const closeBtn  = document.getElementById('closePanel');
+    const panelBody = document.getElementById('panelBody');
+    const panelTitle= document.getElementById('panelTitle');
+
+    function openPanel(title, html) {
+      panelTitle.textContent = title || "Detalle";
+      panelBody.innerHTML = html || "";
+      overlay.classList.add('show');
+      panel.classList.add('show');
+    }
+
+    function closePanelFn() {
+      overlay.classList.remove('show');
+      panel.classList.remove('show');
+    }
+
+    if (closeBtn)  closeBtn.addEventListener('click', closePanelFn);
+    if (overlay)   overlay.addEventListener('click', closePanelFn);
+
+    function hook(id, render) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.addEventListener('click', function(e) {
+        e.preventDefault();
+        render();
+      });
+    }
+
+    // Carta completa
+    hook('openLetter', () => openPanel(
+      'Carta completa de la Directiva',
+      `
+      <article class="card">
+        <img src="carta-directiva.png" alt="Palabras de la Directiva"
+             style="width:100%;border-radius:12px;margin-bottom:16px;display:block;">
+        <p>
+          Durante 2025 enfrentamos desafíos importantes, tanto en el plano operativo como en el laboral. A pesar
+          de la incertidumbre y los cambios, el compromiso de nuestros pilotos y la capacidad de organización del sindicato
+          permitieron avanzar en materias clave para la seguridad operacional, la calidad de vida y el reconocimiento
+          de nuestra labor.
+        </p>
+        <p>
+          Esta carta busca agradecer la confianza, transparentar el trabajo realizado y dejar plasmados aquellos temas
+          que seguirán siendo prioritarios para la directiva y las distintas comisiones en los próximos meses.
+        </p>
+      </article>
+      `
+    ));
+
+    // Convenios
+
+    hook('btn-convenios', () => {
+      const content = `
+    <img src="acuerdo.jpg" class="panel-hero" alt="Convenios y acuerdos SPLC">
+
+        <article class="panel-block">
+          <p>
+            Durante este año avanzamos de manera significativa en la consolidación de beneficios concretos para nuestras tripulaciones.
+            Cada convenio apunta a encontrar beneficios directos en nuestra calidad de vida y surge del trabajo permanente de representación que realiza el sindicato.
+          </p>
+          <p>
+            Los principales avances se enfocan en bienestar, apoyo operativo y acompañamiento en aspectos relevantes de la vida laboral y personal.
+            Estos beneficios han sido negociados, revisados y validados en conjunto, asegurando que aporten valor real a la operación diaria y al bienestar integral de nuestros pilotos.
+          </p>
+          <p>
+            A continuación se presenta un resumen visual de los programas, convenios y acuerdos alcanzados, los cuales seguirán perfeccionándose durante el 2026 con la participación activa de nuestros asociados.
+          </p>
+        </article>
+        <div class="beneficios-carousel">
+          <div class="beneficios-track">
+            <img src="beneficio-doubletree.png" alt="Convenio DoubleTree by Hilton" />
+            <img src="beneficio-enterprise.png" alt="Convenio con Enterprise Rent-a-Car" />
+            <img src="beneficio-hyatt.png" alt="Convenio Hyatt Place" />
+            <img src="beneficio-inprov.png" alt="Convenio bienestar INPROV" />
+            <img src="beneficio-ga.png" alt="Herramienta tecnológica para tripulaciones" />
+          </div>
+        </div>
+      `;
+      openPanel('Convenios y beneficios vigentes 2025', content);
+    });
+
+    // NUESTRA GENTE: DESPEDIDA (texto completo + galería)
+    hook('btn-gente', () => openPanel(
+      'Reconocimientos y despedidas',
+      `
+      <img src="./despedida.jpg" class="panel-hero despedida" alt="Despedida — trayectoria y legado">
+
+      <article class="card">
+        <p>
+          En una velada especialmente preparada para la ocasión, despedimos a
+          Francisco Hernández y Juan Andrés Barberis,
+          quienes cerraron sus brillantes carreras al cumplir 65 años.
+        </p>
+        <p>
+          La jornada estuvo marcada por palabras de agradecimiento, historias de vuelo y el reconocimiento
+          merecido a décadas de compromiso y profesionalismo.
+        </p>
+        <p>
+          
+            En nombre de todos los asociados de nuestro sindicato, se les entregaron presentes como muestra
+            del respeto y gratitud por su destacada trayectoria.
+          
+        </p>
+
+        <div class="despedida-gallery">
+          <!-- Reemplaza los src por las rutas reales de tus fotos o renombra tus archivos a estos nombres -->
+          <img src="despedida-1.jpg" alt="Cena de despedida de pilotos SPLC">
+          <img src="despedida-2.jpg" alt="Entrega de presentes a Francisco Hernández">
+          <img src="despedida-3.jpg" alt="Entrega de presentes a Juan Andrés Barberis">
+          <img src="despedida-4.jpg" alt="Reconocimiento y cierre de la velada">
+        </div>
+      </article>
+      `
+    ));
+
+    // Logros 2025
+    hook('btn-logros', () => {
+      openPanel(
+        'Logros 2025 — Detalle',
+        `<img src="Logros.jpg" class="panel-hero" alt="Logros SPLC">
+         <article class="card">
+          <p>
+            Durante el año 2025 alcanzamos importantes logros y consolidaciones como sindicato. Entre ellos, uno de los más relevantes fue la gestión del <strong>pago del día 10 de la secuencia de vuelo</strong>, proceso que presentó desafíos significativos y que, gracias al trabajo conjunto, logramos sacar adelante con éxito.
+          </p>
+          <p>
+            <strong>Este beneficio se obtuvo fuera del período de negociación colectiva, sin alterar ni modificar otros elementos del convenio colectivo vigente, marcando un precedente relevante en la capacidad de gestión y representación del sindicato.</strong>
+          </p>
+          <p>
+            Asimismo, consolidamos el uso de nuestra <strong>aplicación SPLC</strong>, la cual ha alcanzado una adherencia cercana al <strong>95 % de los asociados</strong>. Esta plataforma se ha transformado en una herramienta fundamental para mantener una comunicación constante y efectiva, además de permitir la recopilación de información clave mediante reportes y encuestas.
+          </p>
+          <p>
+            Durante este año continuamos realizando nuestras <strong>reuniones sindicales de manera presencial</strong>, las que, acompañadas de los tradicionales almuerzos, han permitido fomentar la comunicación directa, el sentido de pertenencia y el espíritu sindical carguero.
+          </p>
+          <p>
+            Finalmente, se fortaleció el <strong>trabajo administrativo interno de la directiva</strong>, consolidando procesos que permiten gestionar de mejor forma los distintos casos que afectan a nuestros asociados en el día a día.
+          </p>
+         </article>`
+      );
+    });
+
+    // Avances convenio
+    hook('btn-avances', () => openPanel('Avances y próximos desafíos — Convenio', `
+      <img src="./pista.jpg" class="panel-hero pista" alt="Pista — rumbo y desafíos por delante">
+
+      <article class="card">
+        <p>
+          Durante este período hemos estado trabajando de manera sistemática en la preparación de nuestra próxima negociación colectiva, un proceso que requiere planificación, participación activa y una visión compartida de futuro.
+        </p>
+        <p>
+          Se realizaron diversas instancias de capacitación, destinadas a entregar herramientas clave para comprender el marco legal, los procesos formales y las mejores prácticas para una negociación moderna y efectiva. Paralelamente, como directiva hemos contado con asesoría permanente de profesionales especializados, lo que ha permitido fortalecer el análisis técnico y estratégico de cada tema en desarrollo.
+        </p>
+        <p>
+          También se organizaron conversatorios abiertos con los pilotos, espacios que han facilitado la expresión de inquietudes, expectativas y experiencias del día a día. Esta retroalimentación ha sido fundamental para identificar prioridades reales y orientar el trabajo de construcción de propuestas.
+        </p>
+        <p>
+          Todo este esfuerzo tiene un objetivo central: llegar a la mesa de negociación con un proyecto sólido, participativo y alineado con las necesidades de nuestros asociados, transformando dudas e inquietudes en ideas concretas y propuestas claras que impulsen mejoras para todos.
+        </p>
+      </article>
+`));
+    // Cierre del año
+    
+  hook('btn-cierre', () => openPanel('Cerrando el año en grande', `
+            <img src="./celebracion.jpg" class="panel-hero celebracion" alt="Celebración — cierre de año">
+
+<article class="card">
+        <p>
+          El pasado 3 de diciembre celebramos nuestro encuentro anual, una instancia marcada por una alta participación de nuestros asociados. Fue una jornada que combinó camaradería, diálogo y un ambiente distendido para compartir experiencias y fortalecer la unión dentro de nuestro sindicato.
+        </p>
+        <p>
+          Durante la actividad se agradeció el compromiso y apoyo permanente de cada piloto, así como las sugerencias y perspectivas que enriquecen el trabajo diario de la directiva. Este encuentro permitió reflexionar sobre los avances del año, proyectar los desafíos que vienen y reafirmar la importancia de mantener una comunicación cercana con todas las tripulaciones.
+        </p>
+        <p>
+          Agradecemos a quienes participaron y contribuyeron a que esta actividad se desarrollara con un clima tan positivo y constructivo. Seguiremos trabajando con dedicación para representar y acompañar a nuestros pilotos en cada etapa del camino.
+        </p>
+
+        <h4 style="margin-top:18px; margin-bottom:8px;">Galería del encuentro</h4>
+        <div class="cierre-gallery">
+          <img src="cierre-1.jpg" alt="Encuentro de fin de año SPLC">
+          <img src="cierre-2.jpg" alt="Encuentro de fin de año SPLC">
+          <img src="cierre-3.jpg" alt="Encuentro de fin de año SPLC">
+          <img src="cierre-4.jpg" alt="Encuentro de fin de año SPLC">
+          <img src="cierre-5.jpg" alt="Encuentro de fin de año SPLC">
+          <img src="cierre-6.jpg" alt="Encuentro de fin de año SPLC">
+        </div>
+      </article>
+    `));
+
+
+  });
+</script>
+</body>
+</html>
