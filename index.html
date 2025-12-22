@@ -431,6 +431,33 @@
   /* Prioriza el fuselaje y el cockpit, sin cortar fuegos */
   object-position: center 55%;
 }
+
+/* Tipografía especial solo para la carta completa en panel lateral */
+.letter-full {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  line-height: 1.65;
+  font-size: 15.5px;
+}
+.letter-full p { margin: 0 0 12px; }
+.letter-full p:last-child { margin-bottom: 0; }
+.letter-sign { margin-top: 10px; font-weight: 600; }
+
+
+/* --- Panel lateral: texto alineado y con mejor lectura --- */
+.panel-body {
+  padding: 20px 26px 22px 22px; /* top right bottom left */
+}
+
+.panel-body p,
+.panel-body li,
+.panel-body .card,
+.panel-body article,
+.panel-body .panel-block {
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+}
+
 </style>
 
 
@@ -455,16 +482,15 @@
   <!-- CARTA DIRECTIVA -->
   <section class="section" id="carta">
     <div class="kicker">Mensaje institucional</div>
-    <h2>Carta de la Directiva</h2>
+    <h2>Carta a nuestros asociados</h2>
     <div class="section-image">
       <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1600&auto=format&fit=crop"
            alt="Reunión de equipo directivo" />
     </div>
     <div class="card letter">
-      <p>
-        Durante 2025 enfrentamos desafíos importantes y logramos avances concretos gracias a la participación
-        y compromiso de nuestros asociados. Esta edición resume los hitos más relevantes del año, los beneficios
-        conseguidos y los desafíos que se vienen por delante.
+      <p class="muted">
+        A través de este mensaje, el Presidente de nuestro Sindicato, Capitán Christian Isbej, en nombre de la Directiva,
+        comparte una reflexión sobre el año que dejamos atrás, los desafíos enfrentados y la importancia de seguir avanzando unidos.
       </p>
       <a class="readmore" id="openLetter" href="#">
         Ver carta completa
@@ -510,7 +536,7 @@
     </div>
     <div class="card">
       <p>
-        Este año despedimos a dos grandes colegas que cerraron su carrera al cumplir 65 años.
+        Este mes despedimos a dos grandes colegas que cerraron su carrera al cumplir 65 años.
         En una cena de homenaje compartimos recuerdos, anécdotas y palabras de agradecimiento entre compañeros.
       </p>
       <a id="btn-gente" class="btn-panel" href="#">
@@ -675,22 +701,23 @@
 
     // Carta completa
     hook('openLetter', () => openPanel(
-      'Carta completa de la Directiva',
+      'Carta a nuestros asociados',
       `
-      <article class="card">
+      <article class="card letter-full">
         <img src="carta-directiva.png" alt="Palabras de la Directiva"
              style="width:100%;border-radius:12px;margin-bottom:16px;display:block;">
-        <p>
-          Durante 2025 enfrentamos desafíos importantes, tanto en el plano operativo como en el laboral. A pesar
-          de la incertidumbre y los cambios, el compromiso de nuestros pilotos y la capacidad de organización del sindicato
-          permitieron avanzar en materias clave para la seguridad operacional, la calidad de vida y el reconocimiento
-          de nuestra labor.
-        </p>
-        <p>
-          Esta carta busca agradecer la confianza, transparentar el trabajo realizado y dejar plasmados aquellos temas
-          que seguirán siendo prioritarios para la directiva y las distintas comisiones en los próximos meses.
-        </p>
+        <p>Estimados amigos,</p>
+<p>En esta época de Navidad y Año Nuevo, queremos expresarles nuestro más sincero agradecimiento por su dedicación y compromiso con este sindicato.</p>
+<p>Estas fechas inevitablemente nos hacen dar una mirada a todo lo que dejamos atrás y a avizorar aquellos desafíos que se nos vienen por delante.</p>
+<p>Es por esto que queremos, en primer lugar, reconocer su profesionalismo y habilidad para enfrentar los desafíos que conlleva volar en diferentes latitudes, condiciones climáticas y operativas, mostrando día a día la calidad del piloto carguero. En segundo lugar, agradecer el compromiso con la actividad gremial y con esta directiva al participar, opinar y sugerir todo aquello que nos pueda hacer crecer como grupo.</p>
+<p>Este año 2025 fue un año con grandes logros como compañía, con importantes desafíos y avances, pero también este año termina con noticias tristes, como la partida de un gran amigo y compañero de trabajo: nuestro querido Marco Pacheco.</p>
+<p>Este 2025, además, despedimos a un par de amigos pilotos que se jubilaron y dejaron de pertenecer físicamente a esta agrupación, pero siempre los llevaremos en nuestros corazones por el aporte que hicieron, tanto personal como profesional.</p>
+<p>Es por estas razones, porque todo pasa muy rápido, que los invitamos a seguir por la senda del profesionalismo, de la camaradería que nos caracteriza, de atesorar aquellos gratos momentos en cabina y fuera de ella que nos distinguen como el grupo que somos o, más aún, la familia que somos: la familia carguera.</p>
+<p>Que esta Navidad y Año Nuevo les traiga alegría, paz y felicidad, y que el próximo año les traiga, a cada uno y como grupo, grandes logros y éxitos en lo profesional como en lo personal.</p>
+<p>¡Feliz Navidad y Próspero Año Nuevo!</p>
+<p class="letter-sign">Atentamente,<br>La Directiva</p>
       </article>
+      
       `
     ));
 
